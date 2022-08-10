@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F732070C181DAE1B3D6EC69 /* Pods_Shoppee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393C956E0362613BC8C4633C /* Pods_Shoppee.framework */; };
 		DB58BEB5289CB6C70067CCB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58BEB4289CB6C70067CCB0 /* AppDelegate.swift */; };
 		DB58BEB9289CB6C70067CCB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58BEB8289CB6C70067CCB0 /* ViewController.swift */; };
 		DB58BEBE289CB6CA0067CCB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB58BEBD289CB6CA0067CCB0 /* Assets.xcassets */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1139F3AB0F382BA28FD7DA14 /* Pods-Shoppee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shoppee.release.xcconfig"; path = "Target Support Files/Pods-Shoppee/Pods-Shoppee.release.xcconfig"; sourceTree = "<group>"; };
+		2BF39F3437FC2BBB3770DA06 /* Pods-Shoppee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shoppee.debug.xcconfig"; path = "Target Support Files/Pods-Shoppee/Pods-Shoppee.debug.xcconfig"; sourceTree = "<group>"; };
+		393C956E0362613BC8C4633C /* Pods_Shoppee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shoppee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB58BEB1289CB6C70067CCB0 /* Shoppee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shoppee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB58BEB4289CB6C70067CCB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB58BEB8289CB6C70067CCB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,18 +34,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB58BECA289CFA0E0067CCB0 /* StoreKit.framework in Frameworks */,
+				1F732070C181DAE1B3D6EC69 /* Pods_Shoppee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2C10F0BAF8432E24E714DC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BF39F3437FC2BBB3770DA06 /* Pods-Shoppee.debug.xcconfig */,
+				1139F3AB0F382BA28FD7DA14 /* Pods-Shoppee.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DB58BEA8289CB6C70067CCB0 = {
 			isa = PBXGroup;
 			children = (
 				DB58BEB3289CB6C70067CCB0 /* Shoppee */,
 				DB58BEB2289CB6C70067CCB0 /* Products */,
 				DB58BEC8289CFA0E0067CCB0 /* Frameworks */,
+				C2C10F0BAF8432E24E714DC5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DB58BEC9289CFA0E0067CCB0 /* StoreKit.framework */,
+				393C956E0362613BC8C4633C /* Pods_Shoppee.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB58BEC5289CB6CA0067CCB0 /* Build configuration list for PBXNativeTarget "Shoppee" */;
 			buildPhases = (
+				9B70B4A1355FDCA7F4BE62EE /* [CP] Check Pods Manifest.lock */,
 				DB58BEAD289CB6C70067CCB0 /* Sources */,
 				DB58BEAE289CB6C70067CCB0 /* Frameworks */,
 				DB58BEAF289CB6C70067CCB0 /* Resources */,
+				A5D9A5498D492E05E7920950 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +155,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B70B4A1355FDCA7F4BE62EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shoppee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5D9A5498D492E05E7920950 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shoppee/Pods-Shoppee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shoppee/Pods-Shoppee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shoppee/Pods-Shoppee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB58BEAD289CB6C70067CCB0 /* Sources */ = {
@@ -280,6 +340,7 @@
 		};
 		DB58BEC6289CB6CA0067CCB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BF39F3437FC2BBB3770DA06 /* Pods-Shoppee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -307,6 +368,7 @@
 		};
 		DB58BEC7289CB6CA0067CCB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1139F3AB0F382BA28FD7DA14 /* Pods-Shoppee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
